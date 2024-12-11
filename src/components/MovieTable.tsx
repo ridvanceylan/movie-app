@@ -40,6 +40,7 @@ const MovieTable: React.FC = () => {
 
   const debouncedSearch = debounce((newSearchTerm: string) => {
     dispatch(setSearchTerm(newSearchTerm));
+    dispatch(setCurrentPage(1));
   }, 500);
 
   useEffect(() => {
