@@ -34,9 +34,11 @@ const moviesSlice = createSlice({
     },
     setType(state, action: PayloadAction<string>) {
       state.type = action.payload;
+      state.currentPage = 1;
     },
     setYear(state, action: PayloadAction<string>) {
       state.year = action.payload;
+      state.currentPage = 1;
     },
     setSearchTerm(state, action: PayloadAction<string>) {
       state.searchTerm = action.payload;
