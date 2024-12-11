@@ -15,6 +15,8 @@ import {
   InputLabel,
   FormControl,
   Container,
+  Chip,
+  Typography,
 } from "@mui/material";
 import Pagination from "./Pagination";
 import debounce from "lodash/debounce";
@@ -64,6 +66,19 @@ const MovieTable: React.FC = () => {
 
   return (
     <Container sx={{ p: 4 }}>
+      <div style={{ marginBottom: "20px" }}>
+        <Typography variant="h6">
+          <Chip
+            label={
+              searchTerm
+                ? `Showing results for: "${searchTerm}"`
+                : "Showing all results:"
+            }
+            color="primary"
+          />
+        </Typography>
+      </div>
+
       <TextField
         label="Search Movies"
         variant="outlined"
@@ -103,7 +118,6 @@ const MovieTable: React.FC = () => {
               <TableCell>Release Date</TableCell>
               <TableCell>IMDb ID</TableCell>
               <TableCell>Type</TableCell>
-
             </TableRow>
           </TableHead>
           <TableBody>
